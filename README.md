@@ -1,6 +1,6 @@
 # AWESOME TASKS
 
-![actual UI](https://github.com/aikssen/awesome-tasks/actual-ui.png)
+![actual UI](/actual-ui.png?raw=true "Actual UI")
 
 ## Description:
 This is a project where the idea is to show a viusally improved UI version of the  [Google's Tasks Application](https://mail.google.com/tasks/canvas) and its [API](https://developers.google.com/google-apps/tasks/v1/reference/), by implementing a modern frontend framework, in this case is Angular 2 (Actually is Angular 4).
