@@ -6,7 +6,7 @@ const helpers = require('./helpers');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const API_DOMAIN = process.env.API_DOMAIN = 'https://www.googleapis.com/tasks/v1';
-const CLIENT_ID = process.env.CLIENT_ID = '401217802230-66d4q5cljbod3gu8f9ejkupsfia3opon.apps.googleusercontent.com';
+const CLIENT_ID = process.env.CLIENT_ID = '<CLIENT_ID>';
 const DISCOVER_DOCS = process.env.DISCOVER_DOCS = 'https://www.googleapis.com/discovery/v1/apis/tasks/v1/rest';
 const SCOPE_1 = process.env.SCOPE_1 = 'https://www.googleapis.com/auth/tasks.readonly';
 const SCOPE_2 = process.env.SCOPE_2 = 'https://www.googleapis.com/auth/tasks';
