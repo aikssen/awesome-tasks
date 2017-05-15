@@ -1,0 +1,331 @@
+/*
+ * Base structure
+ */
+ @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400');
+ @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400');
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  background: $dark-gray;
+  font-family: $main-font;
+  font-weight: 100;
+}
+
+.logo {
+  font-family: $second-font;
+  font-size: 30px;
+  color: $white !important;
+  span {
+    font-size: 27px;
+    margin: -3px 0px 0 0;
+    vertical-align: top;
+  }
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+.navbar-inverse {
+  background-color: $green;
+  border-color: darken($green, 40%);
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: $white;
+}
+
+.navbar {
+  .image-profile {
+    border-radius: 50%;
+    height: 18px;
+  }
+}
+
+
+
+.mid-banner {
+  background: #333333;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin-top: 40px;
+  padding: 20px;
+  .logo span {
+    margin: 9px 0 0 0;
+  }
+
+  .copy {
+    margin: 20px;
+    font-size: 18px;
+    span {
+      margin-top: 10px;
+      font-size: 14px;
+      display: block;
+    }
+  }
+}
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+
+  .new-tasklist-container {
+    float: right;
+    color: $purple;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 10px 0px 0;
+    cursor: pointer;
+  }
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: $dark-gray;
+    border-right: 1px solid $mid-gray;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin: 20px -21px 20px -20px;
+  li {
+    color: $white;
+    font-size: 18px;
+    a {
+      padding-right: 20px;
+      padding-left: 20px;
+      color: $white;
+      transition: background-color 0.3s ease;
+      &:hover, &:focus {
+        background-color: $purple;
+      }
+      span {
+        font-size: 15px;
+        margin: 5px 10px 0 0;
+        vertical-align: top;
+      }
+    }
+    input {
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      color: white;
+      background: #434857;
+      border: none;
+      padding: 10px 10px;
+      border-radius: 0;
+    }
+  }
+
+  .active {
+    background: $purple;
+  }
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+  color: $blue;
+  border-bottom: 1px solid $mid-gray;
+  font-family: $second-font;
+  font-weight: 200;
+  & .tasks-total {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 15px 50px 0 0;
+  }
+
+  span {
+    font-size: 26px;
+    margin: 8px 10px 0 0;
+    vertical-align: top;
+  }
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+
+
+.task-filters {
+  margin-bottom: 30px;
+  width: 100%;
+  height: 30px;
+  .navbar-right {
+    margin-right: 0;
+  }
+  ul > li {
+    margin-left: 10px;
+  }
+}
+
+
+.tasks-container {
+  .tasks-sub-container {
+    margin-top: 30px;
+    .task {
+      border-bottom: 1px solid $mid-gray;
+      position: relative;
+      height: 45px;
+
+      &:first-child {
+        border-bottom: none;
+      }
+
+      a {
+          display: block;
+          width: calc(100% - 30px);
+          margin-left: 30px;
+          text-decoration: none;
+          color: $white;
+          font-size: 22px;
+          position: absolute;
+          top: 0;
+          line-height: 45px;
+          padding: 0 0 0 10px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background: $blue;
+          }
+
+          &:active {
+            background: $green;
+          }
+
+          &.completed {
+            text-decoration: line-through;
+            font-style: italic;
+            color: $alter-gray;
+          }
+      }
+
+      .edit-task {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 22px;
+        margin: 8px 10px 0 0;
+        color: $mid-gray;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .task-options {
+        position: absolute;
+        top: 12px;
+        right: 28px;
+        color: $mid-gray;
+        ul li {
+          width: 25px;
+          .delete {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            &:hover {
+              color: $red;
+            }
+          }
+        }
+      }
+      
+      
+      .due {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 12px 45px 0 0;
+        color: $mid-gray;
+      }
+
+      .new-task { // input
+        width: calc(100% - 30px);
+        height: 45px;
+        margin-left: 30px;
+        background: $mid-gray;
+        border: 1px solid $mid-gray;
+        font-size: 22px;
+        padding: 0 9px;
+        color: white;
+        border-radius: 0;
+      }
+
+      .new-task-icon {
+        position: absolute;
+        color: $mid-gray;
+        font-size: 19px;
+        top: 0;
+        margin: 12px 0 0 5px;
+      }
+
+      .invalid-title {
+        color: $red;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 12px 12px 0 0;
+      }
+      
+    }
+    
+  }
+}

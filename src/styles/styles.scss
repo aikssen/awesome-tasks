@@ -1,0 +1,14 @@
+/**
+ * Main file that imports partial scss styles from the _*.scss files
+ * Any file create here (inside /styles) must be prefixed with underscore.
+ * 
+ * This structure/configuration of sass allows to declare global styles
+ * tha overrides the styles defined in the angular modules encapsulation.
+ */
+
+// internal imports
+@import '_variables';
+@import '_utilities';
+@import '_buttons';
+@import '_form_elements';
+@import '_general';

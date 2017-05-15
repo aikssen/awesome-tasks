@@ -1,0 +1,19 @@
+{
+  "name": "angular-io-example",
+  "description": "Example project from an angular.io guide.",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reset-css": "^2.2.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7"
+  }
+}

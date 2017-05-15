@@ -1,0 +1,20 @@
+// variables, extendables, mixins and functions do not have an output when compiled.
+$red: #E64759;
+$blue: #1ca8dd;
+$green: #1bc98e;
+$purple: #9F86FF;
+$white: #ffffff;
+$mid-gray: #434857;
+$light-gray: #999999;
+$dark-gray: #252830;
+$alter-gray: #52595d;
+
+$main-font: 'Roboto', sans-serif;
+$second-font: 'Oswald', sans-serif;
+
+//#428bca
+
+/* $activeColor: #c0392b; //red */
+$activeColor: #1ca8dd; //green
+$darkenColor: darken($activeColor, 20%);
+$background: #3498db;
