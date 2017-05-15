@@ -13,6 +13,27 @@ This is a project where the idea is to show a viusally improved UI version of th
 * Hot reloading for development (webpack dev server).
 * A clear angular project structure.
 * Good management of typescript types with @types/[library].
+* Environments configiration (development, test, production...)
+
+
+
+## Configurations
+
+The GoogleApiConfig class provides the required configuration for the Api.
+In order to connect with the google's API is necessary to set up some values
+for the application.  
+
+In the files `/config/webpack.dev.js` and `/config/webpack.prod.js` is necessary
+to set the value `CLIENT_ID` which is required by google.which
+
+```
+const CLIENT_ID = process.env.CLIENT_ID = '<CLIENT_ID>';
+```
+
+Configure them according your google app configurations and resource scope.
+* To get the clientId see in your [developer console](https://console.developers.google.com/apis/credentials)
+* If you are not familiar with the google's console, [follow this guide](https://developers.google.com/google-apps/tasks/firstapp)
+
 
 ## How to set up
 

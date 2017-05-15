@@ -24,17 +24,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     if (this.isSignedIn()) {
-      console.log('LOGGIN IN');
       this.getTaskLists();
       this.userOnSession = this.gapiUserService.userOnSession();
-      console.log(this.userOnSession);
     }
   }
 
   // load user's tasklits
   getTaskLists() {
     this.taskService.getTasksList().subscribe((res: any) => {
-      console.log('lists', res);
       this.getTasks(res[0]); // load the tasks for the first list
       this.selectedList = res[0]; // set the default list
       this.taskList = res;
@@ -48,7 +45,6 @@ export class HomeComponent implements OnInit {
     } else {
       // this.invalidForm = false;
       this.taskService.newTaskList(list.value).subscribe((res: any) => {
-        console.log(res);
         this.getTaskLists();
         list.resetForm();
         this.toggleShowTaskListInput();
@@ -71,15 +67,12 @@ export class HomeComponent implements OnInit {
   }
 
   newTask(task: NgForm) {
-    console.log('newwwwww', task);
     const list = this.selectedList;
-    console.log(task.valid);
     if (!task.valid) {
       this.invalidForm = true;
     } else {
       this.invalidForm = false;
       this.taskService.newTask(list.id, task.value).subscribe((res: any) => {
-        console.log(res);
         this.getTasks(list);
         task.resetForm();
       });
@@ -89,7 +82,6 @@ export class HomeComponent implements OnInit {
   toggleCompletedTask(task: any) {
     const list = this.selectedList;
     this.taskService.completeTask(list.id, task).subscribe((res: any) => {
-      console.log(res);
       this.getTasks(list);
     });
   }
@@ -97,7 +89,6 @@ export class HomeComponent implements OnInit {
   deleteTask(task: any) {
     const list = this.selectedList;
     this.taskService.deleteTask(list.id, task).subscribe((res: any) => {
-      console.log(res);
       this.getTasks(list);
     });
   }
