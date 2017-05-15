@@ -84,13 +84,13 @@
       <div class="task-filters">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <button class="button bg-1 button--main">
+            <button class="button bg-1 button--main" (click)="toggleShowCompletedTasks()">
               <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
               Clear completed
             </button>
           </li>
           <li>
-            <button class="button bg-1 button--main">
+            <button class="button bg-1 button--main" (click)="toggleShowCompletedTasks()">
               <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
               Show Completed
             </button>

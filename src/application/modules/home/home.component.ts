@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  // UI field display
   toggleShowTaskListInput() {
     this.showTaskListInput = !this.showTaskListInput;
   }
@@ -68,7 +69,7 @@ export class HomeComponent implements OnInit {
 
   newTask(task: NgForm) {
     const list = this.selectedList;
-    if (!task.valid) {
+    if (!task.valid) { // form validation
       this.invalidForm = true;
     } else {
       this.invalidForm = false;
@@ -79,6 +80,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  // allows to complete or uncomplete a task
   toggleCompletedTask(task: any) {
     const list = this.selectedList;
     this.taskService.completeTask(list.id, task).subscribe((res: any) => {
@@ -91,6 +93,10 @@ export class HomeComponent implements OnInit {
     this.taskService.deleteTask(list.id, task).subscribe((res: any) => {
       this.getTasks(list);
     });
+  }
+
+  toggleShowCompletedTasks(): void {
+    alert('To be implemented');
   }
 
   signIn(): void {
