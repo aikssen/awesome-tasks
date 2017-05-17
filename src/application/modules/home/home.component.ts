@@ -9,8 +9,8 @@ import { TaskService } from '../../shared/services/task.service';
 })
 export class HomeComponent implements OnInit {
   public viewId: string;
-  public taskList: any;
-  public tasks: any;
+  public taskLists: any[];
+  public tasks: any[];
   public selectedList: any = {};
   public invalidForm: boolean = false;
   public showTaskListInput: boolean = false;
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.taskService.getTasksList().subscribe((res: any) => {
       this.getTasks(res[0]); // load the tasks for the first list
       this.selectedList = res[0]; // set the default list
-      this.taskList = res;
+      this.taskLists = res;
     });
   }
 

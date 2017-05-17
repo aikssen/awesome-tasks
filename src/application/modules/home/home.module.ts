@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -11,7 +13,9 @@ import { HomeComponent } from './home.component';
     FormsModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    LoginComponent
   ],
   exports: [
     HomeComponent,
